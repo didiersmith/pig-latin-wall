@@ -19,6 +19,8 @@ docker run \
     redis
 
 
+cd $ROOT_DIR/contract
+npm i
 # Start hardhat local ethereum node.
 # adduser hackery is to work around a permission error with running hardhat as root.
 docker run \
@@ -44,7 +46,6 @@ private_key=$(docker logs hello-world-hardhat-local \
     | cut -d : -f 2 \
     | tr -d ' ')
 
-cd $ROOT_DIR/contract
 # Build and deploy smart contract. This is done from the host so that the
 # compiled artifacts have the same permissions as the user deploying.
 npx hardhat compile
@@ -66,11 +67,13 @@ cp -rf contract/artifacts gui/src/artifacts
 cp -rf contract/artifacts api/artifacts
 
 cd $ROOT_DIR/gui
+npm i
 export REACT_APP_CONTRACT_ADDRESS=$contract_address
 npm run build
 cd ..
 
 cd $ROOT_DIR/api
+npm i
 
 echo "Starting server"
 docker run \

@@ -4,7 +4,7 @@ import './App.css';
 import Wall from './artifacts/contracts/Wall.sol/Wall.json';
 
 const wallAddress = process.env.REACT_APP_CONTRACT_ADDRESS;
-const APIAddress = "http://localhost:11235/api/v1"
+const APIAddress = "/api/v1"
 
 console.log("Smart contract is at address ", wallAddress);
 
@@ -47,12 +47,8 @@ function App() {
   }
 
   function handleKeyPress(e) {
-    console.log(e);
     if (e.keyCode === 13 || e.code === "Enter" || e.charCode === 13) { // User pressed enter
-      console.log("setMessage");
       setMessage();
-    } else {
-      console.log(e.keyCode, e.code, e.charCode);
     }
   }
 
