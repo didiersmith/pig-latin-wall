@@ -1,0 +1,57 @@
+body {
+  background-color: #fafafa;
+  font-size: 12pt;
+  color: #212738;
+}
+
+.wall-content {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  flex-grow: 0;
+}
+
+ul {
+  list-style-type: none;
+  flex-grow: 1;
+  overflow: auto;
+}
+
+li {
+  padding: 10px;
+}
+
+li:nth-child(even) {
+    background-color: #ddd;
+}
+
+.input-form {
+  flex-grow: 0;
+  width: 100%;
+  background-color: #C0C5C1;
+  display: flex;
+  flex-direction: row;
+}
+
+input, button {
+  font-size: 1.2em;
+  margin: 10px;
+}
+
+button {
+  background-color: #443850;
+  color: #EAF0CE;
+  flex-grow: 0;
+  margin-left: 0px;
+}
+input {
+  flex-grow: 1;
+}
+
+
+
+
