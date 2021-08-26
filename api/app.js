@@ -35,7 +35,7 @@ contract.on("MsgUpdated", async (message) => {
       // unicode or probably a zillion other special cases.
       if (x.length == 0) {
         return x
-      } else if ("aeiou".search(x.charAt(0)) !== -1) {
+      } else if ("aeiouAEIOU".search(x.charAt(0)) !== -1) {
         return x+"ay";
       } else {
         return x.slice(1)+x.charAt(0)+"ay"
